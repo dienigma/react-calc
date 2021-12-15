@@ -3,7 +3,7 @@ import { btnConfig } from "../btnConfig";
 import CalcBtn from "./CalcBtn";
 
 const ActionGrid = ({ setOps, setRes, ops, res }) => {
-  const disable = ops.length && isNaN(ops[ops.length - 1]);
+  const disable = ops.length && (isNaN(ops[ops.length - 1]) || isNaN(ops[0]));
   const clearCalc = () => {
     setRes(0);
     setOps("");
